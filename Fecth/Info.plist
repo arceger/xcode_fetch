@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_URL</key>
+	<string>https://c238-2001-8a0-7309-4a00-95cb-fa61-647d-31c8.ngrok-free.app/api/src/</string>
+</dict>
+</plist>

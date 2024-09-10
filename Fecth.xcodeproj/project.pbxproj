@@ -40,6 +40,7 @@
 		4F09868A2C8C7F4700E3AF90 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4F09868C2C8C7FB700E3AF90 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		4F09868E2C8C7FE200E3AF90 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4F96B1782C909EF700473E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4FC5E2012C8B68A0001F3B30 /* Fecth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fecth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC5E2042C8B68A0001F3B30 /* global_fecthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = global_fecthApp.swift; sourceTree = "<group>"; };
 		4FC5E2062C8B68A0001F3B30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 		4FC5E2032C8B68A0001F3B30 /* Fecth */ = {
 			isa = PBXGroup;
 			children = (
+				4F96B1782C909EF700473E6C /* Info.plist */,
 				4FC5E2042C8B68A0001F3B30 /* global_fecthApp.swift */,
 				4FC5E2062C8B68A0001F3B30 /* ContentView.swift */,
 				4FC5E2082C8B68A3001F3B30 /* Assets.xcassets */,
@@ -438,6 +440,7 @@
 				DEVELOPMENT_TEAM = MXA2NQR2R4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fecth/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Fecth;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -470,6 +473,7 @@
 				DEVELOPMENT_TEAM = MXA2NQR2R4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fecth/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Fecth;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
