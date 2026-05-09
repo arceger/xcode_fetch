@@ -2,13 +2,17 @@ import Foundation
 import SwiftUI
 
 struct LoginView: View {
-    @State private var email = ""
+    @State private var username = ""
     @State private var password = ""
     @Binding var isLoggedIn: Bool
+    
     @State private var showingAlert = false
     @State private var alertMessage = ""
+    @State private var isLoading = false
+    
     @AppStorage("loggedInUserName") var loggedInUserName: String = ""
     @AppStorage("loggedInUserRole") var loggedInUserRole: String = ""
+    @AppStorage("loggedInUserEmail") var loggedInUserEmail: String = ""
     @AppStorage("authToken") var authToken: String = ""
 
     var body: some View {
@@ -18,7 +22,7 @@ struct LoginView: View {
                     .font(.largeTitle)
                     .padding()
 
-                TextField("Email", text: $email)
+                TextField("Username", text: $username)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
 
@@ -26,10 +30,15 @@ struct LoginView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
 
-                Button("Login") {
-                    login()
+                if isLoading {
+                    ProgressView()
+                        .padding()
+                } else {
+                    Button("Login") {
+                        login()
+                    }
+                    .padding()
                 }
-                .padding()
 
                 NavigationLink("Register", destination: RegisterView())
                     .padding()
@@ -41,71 +50,107 @@ struct LoginView: View {
     }
 
     func login() {
-        // Recupera a URL base do Info.plist
         guard let baseURL = Bundle.main.object(forInfoDictionaryKey: "API_URL") as? String else {
             alertMessage = "API URL não configurada corretamente."
             showingAlert = true
             return
         }
-        
-        let loginURL = "\(baseURL)login.php"
-        
-        guard let url = URL(string: loginURL) else { return }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        
-        guard !email.isEmpty, !password.isEmpty else {
-            alertMessage = "Email e senha não podem estar vazios."
+
+        guard let url = URL(string: "\(baseURL)login") else {
+            alertMessage = "URL inválida."
             showingAlert = true
             return
         }
-        
-        let json: [String: Any] = ["email": email, "password": password]
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
-        
-        request.httpBody = jsonData
+
+        guard !username.isEmpty, !password.isEmpty else {
+            alertMessage = "Username e senha não podem estar vazios."
+            showingAlert = true
+            return
+        }
+
+        isLoading = true
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+
+        let json: [String: Any] = [
+            "username": username,
+            "password": password
+        ]
+
+        request.httpBody = try? JSONSerialization.data(withJSONObject: json)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
         URLSession.shared.dataTask(with: request) { data, response, error in
-            if error != nil {
+            DispatchQueue.main.async {
+                isLoading = false
+            }
+
+            if let error = error {
                 DispatchQueue.main.async {
-                    self.alertMessage = "Erro de rede. Por favor, tente novamente."
-                    self.showingAlert = true
+                    alertMessage = "Erro de rede: \(error.localizedDescription)"
+                    showingAlert = true
                 }
                 return
             }
 
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    if let data = data, let jsonResponse = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                        // Captura o nome, papel e token do usuário
-                        if let name = jsonResponse["name"] as? String,
-                           let role = jsonResponse["role"] as? String,
-                           let token = jsonResponse["token"] as? String {
-                            DispatchQueue.main.async {
-                                self.loggedInUserName = name
-                                self.loggedInUserRole = role
-                                self.authToken = token // Armazenando o token
-                                self.isLoggedIn = true
-                            }
-                        } else {
-                            DispatchQueue.main.async {
-                                self.alertMessage = "Formato de resposta inválido."
-                                self.showingAlert = true
-                            }
+            guard let httpResponse = response as? HTTPURLResponse else {
+                DispatchQueue.main.async {
+                    alertMessage = "Resposta inválida do servidor."
+                    showingAlert = true
+                }
+                return
+            }
+
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    alertMessage = "Sem dados na resposta."
+                    showingAlert = true
+                }
+                return
+            }
+
+            // Debug útil
+            print("Response:", String(data: data, encoding: .utf8) ?? "no body")
+
+            if httpResponse.statusCode == 200 {
+                do {
+                    if let jsonResponse = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                       let token = jsonResponse["token"] as? String,
+                       let user = jsonResponse["user"] as? [String: Any],
+                       let username = user["username"] as? String,
+                       let role = user["role"] as? String,
+                       let email = user["email"] as? String {
+
+                        DispatchQueue.main.async {
+                            self.authToken = token
+                            self.loggedInUserName = username
+                            self.loggedInUserRole = role
+                            self.loggedInUserEmail = email
+                            self.isLoggedIn = true
                         }
+
                     } else {
                         DispatchQueue.main.async {
-                            self.alertMessage = "Não foi possível interpretar a resposta do servidor."
-                            self.showingAlert = true
+                            alertMessage = "Formato de resposta inválido."
+                            showingAlert = true
                         }
                     }
-                } else {
+                } catch {
                     DispatchQueue.main.async {
-                        self.alertMessage = "Email ou senha inválidos."
-                        self.showingAlert = true
+                        alertMessage = "Erro ao interpretar resposta."
+                        showingAlert = true
                     }
+                }
+            } else if httpResponse.statusCode == 401 {
+                DispatchQueue.main.async {
+                    alertMessage = "Credenciais inválidas."
+                    showingAlert = true
+                }
+            } else {
+                DispatchQueue.main.async {
+                    alertMessage = "Erro inesperado (\(httpResponse.statusCode))."
+                    showingAlert = true
                 }
             }
         }.resume()

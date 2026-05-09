@@ -6,7 +6,7 @@ struct RegisterView: View {
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var role = "tecnico"
-    @State private var nome = ""
+    @State private var username = ""
     @State private var tel = ""
     @State private var city = ""
     @State private var endereco = ""
@@ -20,7 +20,7 @@ struct RegisterView: View {
                 .font(.largeTitle)
                 .padding()
 
-            TextField("Nome", text: $nome)
+            TextField("Nome", text: $username)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
 
@@ -76,7 +76,7 @@ struct RegisterView: View {
 
     func register() {
         // Validação dos campos
-        guard !email.isEmpty, !password.isEmpty, !nome.isEmpty, !tel.isEmpty, !city.isEmpty, !endereco.isEmpty else {
+        guard !email.isEmpty, !password.isEmpty, !username.isEmpty, !tel.isEmpty, !city.isEmpty, !endereco.isEmpty else {
             alertMessage = "Todos os campos são obrigatórios."
             showingAlert = true
             return
@@ -103,7 +103,7 @@ struct RegisterView: View {
             return
         }
 
-        guard let url = URL(string: "\(baseURL)register.php") else { return }
+        guard let url = URL(string: "\(baseURL)register") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -112,7 +112,7 @@ struct RegisterView: View {
             "email": email,
             "password": password,
             "role": role,
-            "nome": nome,
+            "username": username,
             "tel": tel,
             "city": city,
             "endereco": endereco
@@ -160,7 +160,7 @@ struct RegisterView: View {
         confirmEmail = ""
         password = ""
         confirmPassword = ""
-        nome = ""
+        username = ""
         tel = ""
         city = ""
         endereco = ""

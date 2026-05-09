@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>API_URL</key>
-	<string>https://c238-2001-8a0-7309-4a00-95cb-fa61-647d-31c8.ngrok-free.app/api/src/</string>
+	<string>http://localhost:8000/</string>
 </dict>
 </plist>
