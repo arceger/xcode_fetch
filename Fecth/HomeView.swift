@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-struct MainView: View {
+struct HomeView: View {
     @AppStorage("loggedInUserName") var loggedInUserName: String = ""
     @AppStorage("loggedInUserRole") var loggedInUserRole: String = ""
     @Binding var isLoggedIn: Bool // Adiciona o estado de login como binding
@@ -20,12 +20,13 @@ struct MainView: View {
                 Text("Admin Panel")
                     .font(.title)
                     .padding()
-                // Adicionar mais funcionalidades específicas de admin aqui
+                DonationView()
+                
             } else if loggedInUserRole == "tecnico" {
                 Text("Técnico Dashboard")
                     .font(.title)
                     .padding()
-                // Adicionar mais funcionalidades específicas de técnico aqui
+                DonationView()
             }
 
             Button("Logout") {

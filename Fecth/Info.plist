@@ -3,6 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>API_URL</key>
-	<string>http://localhost:8000/</string>
+	<string>https://new-api-java-postgres.onrender.com/auth/</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>mbway</string>
+    </array>
 </dict>
 </plist>

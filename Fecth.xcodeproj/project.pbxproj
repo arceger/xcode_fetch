@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F09868B2C8C7F4700E3AF90 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F09868A2C8C7F4700E3AF90 /* LoginView.swift */; };
 		4F09868D2C8C7FB700E3AF90 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F09868C2C8C7FB700E3AF90 /* RegisterView.swift */; };
-		4F09868F2C8C7FE200E3AF90 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F09868E2C8C7FE200E3AF90 /* MainView.swift */; };
+		4F09868F2C8C7FE200E3AF90 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F09868E2C8C7FE200E3AF90 /* HomeView.swift */; };
 		4FC5E2052C8B68A0001F3B30 /* global_fecthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5E2042C8B68A0001F3B30 /* global_fecthApp.swift */; };
 		4FC5E2072C8B68A0001F3B30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5E2062C8B68A0001F3B30 /* ContentView.swift */; };
 		4FC5E2092C8B68A3001F3B30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC5E2082C8B68A3001F3B30 /* Assets.xcassets */; };
@@ -17,6 +17,17 @@
 		4FC5E2162C8B68A3001F3B30 /* global_fecthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5E2152C8B68A3001F3B30 /* global_fecthTests.swift */; };
 		4FC5E2202C8B68A3001F3B30 /* FecthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5E21F2C8B68A3001F3B30 /* FecthUITests.swift */; };
 		4FC5E2222C8B68A3001F3B30 /* FecthUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC5E2212C8B68A3001F3B30 /* FecthUITestsLaunchTests.swift */; };
+		CEB99E93302298C500EBA721 /* Mainview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB99E92302298BA00EBA721 /* Mainview.swift */; };
+		CEB99E953022991D00EBA721 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB99E943022991800EBA721 /* ItemListView.swift */; };
+		CEB99E973022994800EBA721 /* OrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB99E963022994400EBA721 /* OrdersView.swift */; };
+		CEB99E993022996300EBA721 /* CreateOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB99E983022995F00EBA721 /* CreateOrderView.swift */; };
+		CEB99E9B30229AB100EBA721 /* PedidoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB99E9A30229AA500EBA721 /* PedidoListView.swift */; };
+		CEB99E9D30229AF300EBA721 /* PedidoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB99E9C30229AE800EBA721 /* PedidoDetailView.swift */; };
+		CEB99E9F30229BCD00EBA721 /* OrderDatailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB99E9E30229BC000EBA721 /* OrderDatailView.swift */; };
+		CEB99EA130229CBB00EBA721 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB99EA030229CB500EBA721 /* Model.swift */; };
+		CEB99EA33022A08D00EBA721 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB99EA23022A08500EBA721 /* OrderListView.swift */; };
+		CEF6AC8F2FD062980010E499 /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AC8E2FD0628E0010E499 /* DonationView.swift */; };
+		CEF6AC912FD06CF50010E499 /* ContribuicaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AC902FD06CF10010E499 /* ContribuicaoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +50,7 @@
 /* Begin PBXFileReference section */
 		4F09868A2C8C7F4700E3AF90 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4F09868C2C8C7FB700E3AF90 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		4F09868E2C8C7FE200E3AF90 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4F09868E2C8C7FE200E3AF90 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4F96B1782C909EF700473E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4FC5E2012C8B68A0001F3B30 /* Fecth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fecth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC5E2042C8B68A0001F3B30 /* global_fecthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = global_fecthApp.swift; sourceTree = "<group>"; };
@@ -51,6 +62,17 @@
 		4FC5E21B2C8B68A3001F3B30 /* FecthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FecthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC5E21F2C8B68A3001F3B30 /* FecthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FecthUITests.swift; sourceTree = "<group>"; };
 		4FC5E2212C8B68A3001F3B30 /* FecthUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FecthUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CEB99E92302298BA00EBA721 /* Mainview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mainview.swift; sourceTree = "<group>"; };
+		CEB99E943022991800EBA721 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		CEB99E963022994400EBA721 /* OrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersView.swift; sourceTree = "<group>"; };
+		CEB99E983022995F00EBA721 /* CreateOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderView.swift; sourceTree = "<group>"; };
+		CEB99E9A30229AA500EBA721 /* PedidoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoListView.swift; sourceTree = "<group>"; };
+		CEB99E9C30229AE800EBA721 /* PedidoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoDetailView.swift; sourceTree = "<group>"; };
+		CEB99E9E30229BC000EBA721 /* OrderDatailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDatailView.swift; sourceTree = "<group>"; };
+		CEB99EA030229CB500EBA721 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CEB99EA23022A08500EBA721 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
+		CEF6AC8E2FD0628E0010E499 /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
+		CEF6AC902FD06CF10010E499 /* ContribuicaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContribuicaoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +123,17 @@
 		4FC5E2032C8B68A0001F3B30 /* Fecth */ = {
 			isa = PBXGroup;
 			children = (
+				CEB99EA23022A08500EBA721 /* OrderListView.swift */,
+				CEB99EA030229CB500EBA721 /* Model.swift */,
+				CEB99E9E30229BC000EBA721 /* OrderDatailView.swift */,
+				CEB99E9C30229AE800EBA721 /* PedidoDetailView.swift */,
+				CEB99E9A30229AA500EBA721 /* PedidoListView.swift */,
+				CEB99E983022995F00EBA721 /* CreateOrderView.swift */,
+				CEB99E963022994400EBA721 /* OrdersView.swift */,
+				CEB99E943022991800EBA721 /* ItemListView.swift */,
+				CEB99E92302298BA00EBA721 /* Mainview.swift */,
+				CEF6AC902FD06CF10010E499 /* ContribuicaoView.swift */,
+				CEF6AC8E2FD0628E0010E499 /* DonationView.swift */,
 				4F96B1782C909EF700473E6C /* Info.plist */,
 				4FC5E2042C8B68A0001F3B30 /* global_fecthApp.swift */,
 				4FC5E2062C8B68A0001F3B30 /* ContentView.swift */,
@@ -108,7 +141,7 @@
 				4FC5E20A2C8B68A3001F3B30 /* Preview Content */,
 				4F09868A2C8C7F4700E3AF90 /* LoginView.swift */,
 				4F09868C2C8C7FB700E3AF90 /* RegisterView.swift */,
-				4F09868E2C8C7FE200E3AF90 /* MainView.swift */,
+				4F09868E2C8C7FE200E3AF90 /* HomeView.swift */,
 			);
 			path = Fecth;
 			sourceTree = "<group>";
@@ -202,7 +235,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 2630;
 				TargetAttributes = {
 					4FC5E2002C8B68A0001F3B30 = {
 						CreatedOnToolsVersion = 15.4;
@@ -268,11 +301,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB99EA130229CBB00EBA721 /* Model.swift in Sources */,
+				CEB99EA33022A08D00EBA721 /* OrderListView.swift in Sources */,
+				CEF6AC8F2FD062980010E499 /* DonationView.swift in Sources */,
+				CEB99E93302298C500EBA721 /* Mainview.swift in Sources */,
+				CEB99E9F30229BCD00EBA721 /* OrderDatailView.swift in Sources */,
+				CEB99E9D30229AF300EBA721 /* PedidoDetailView.swift in Sources */,
 				4F09868B2C8C7F4700E3AF90 /* LoginView.swift in Sources */,
 				4F09868D2C8C7FB700E3AF90 /* RegisterView.swift in Sources */,
+				CEB99E953022991D00EBA721 /* ItemListView.swift in Sources */,
+				CEB99E973022994800EBA721 /* OrdersView.swift in Sources */,
 				4FC5E2072C8B68A0001F3B30 /* ContentView.swift in Sources */,
-				4F09868F2C8C7FE200E3AF90 /* MainView.swift in Sources */,
+				CEB99E9B30229AB100EBA721 /* PedidoListView.swift in Sources */,
+				CEB99E993022996300EBA721 /* CreateOrderView.swift in Sources */,
+				4F09868F2C8C7FE200E3AF90 /* HomeView.swift in Sources */,
 				4FC5E2052C8B68A0001F3B30 /* global_fecthApp.swift in Sources */,
+				CEF6AC912FD06CF50010E499 /* ContribuicaoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +388,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MXA2NQR2R4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -367,6 +412,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -407,6 +453,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = MXA2NQR2R4;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -423,6 +470,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -437,11 +485,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fecth/Preview Content\"";
-				DEVELOPMENT_TEAM = MXA2NQR2R4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fecth/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Fecth;
+				INFOPLIST_KEY_CFBundleDisplayName = "MSB Remote";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -470,11 +517,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fecth/Preview Content\"";
-				DEVELOPMENT_TEAM = MXA2NQR2R4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Fecth/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Fecth;
+				INFOPLIST_KEY_CFBundleDisplayName = "MSB Remote";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -497,11 +543,9 @@
 		4FC5E2292C8B68A3001F3B30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MXA2NQR2R4;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
@@ -517,11 +561,9 @@
 		4FC5E22A2C8B68A3001F3B30 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MXA2NQR2R4;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
@@ -537,10 +579,8 @@
 		4FC5E22C2C8B68A3001F3B30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MXA2NQR2R4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.over.global-fecthUITests";
@@ -555,10 +595,8 @@
 		4FC5E22D2C8B68A3001F3B30 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = MXA2NQR2R4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.over.global-fecthUITests";

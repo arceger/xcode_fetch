@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 struct LoginView: View {
-    @State private var username = ""
+    @State private var email = ""
     @State private var password = ""
     @Binding var isLoggedIn: Bool
     
@@ -22,7 +22,7 @@ struct LoginView: View {
                     .font(.largeTitle)
                     .padding()
 
-                TextField("Username", text: $username)
+                TextField("Email", text: $email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
 
@@ -62,7 +62,7 @@ struct LoginView: View {
             return
         }
 
-        guard !username.isEmpty, !password.isEmpty else {
+        guard !email.isEmpty, !password.isEmpty else {
             alertMessage = "Username e senha não podem estar vazios."
             showingAlert = true
             return
@@ -74,7 +74,7 @@ struct LoginView: View {
         request.httpMethod = "POST"
 
         let json: [String: Any] = [
-            "username": username,
+            "email": email,
             "password": password
         ]
 
@@ -116,27 +116,26 @@ struct LoginView: View {
             if httpResponse.statusCode == 200 {
                 do {
                     if let jsonResponse = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                       let token = jsonResponse["token"] as? String,
-                       let user = jsonResponse["user"] as? [String: Any],
-                       let username = user["username"] as? String,
-                       let role = user["role"] as? String,
-                       let email = user["email"] as? String {
+                        let token = jsonResponse["token"] as? String,
+                        let name = jsonResponse["name"] as? String,
+                        let role = jsonResponse["role"] as? String{
 
                         DispatchQueue.main.async {
                             self.authToken = token
-                            self.loggedInUserName = username
+                            self.loggedInUserName = name
                             self.loggedInUserRole = role
-                            self.loggedInUserEmail = email
+                            self.loggedInUserEmail = self.email
                             self.isLoggedIn = true
                         }
 
                     } else {
+                        print("Formato recebido: \(String(data: data, encoding: .utf8) ?? "")")
                         DispatchQueue.main.async {
                             alertMessage = "Formato de resposta inválido."
                             showingAlert = true
                         }
                     }
-                } catch {
+                }catch {
                     DispatchQueue.main.async {
                         alertMessage = "Erro ao interpretar resposta."
                         showingAlert = true

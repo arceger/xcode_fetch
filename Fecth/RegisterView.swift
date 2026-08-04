@@ -6,13 +6,13 @@ struct RegisterView: View {
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var role = "tecnico"
-    @State private var username = ""
-    @State private var tel = ""
+    @State private var name = ""
+    @State private var telefone = ""
     @State private var city = ""
     @State private var endereco = ""
     @State private var showingAlert = false
     @State private var alertMessage = ""
-    @State private var isLoading = false // Para controlar a ampulheta de carregamento
+    @State private var isLoading = false
 
     var body: some View {
         VStack {
@@ -20,11 +20,11 @@ struct RegisterView: View {
                 .font(.largeTitle)
                 .padding()
 
-            TextField("Nome", text: $username)
+            TextField("Nome", text: $name)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
 
-            TextField("Telefone", text: $tel)
+            TextField("Telefone", text: $telefone)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
 
@@ -76,7 +76,7 @@ struct RegisterView: View {
 
     func register() {
         // Validação dos campos
-        guard !email.isEmpty, !password.isEmpty, !username.isEmpty, !tel.isEmpty, !city.isEmpty, !endereco.isEmpty else {
+        guard !email.isEmpty, !password.isEmpty, !name.isEmpty, !telefone.isEmpty, !city.isEmpty, !endereco.isEmpty else {
             alertMessage = "Todos os campos são obrigatórios."
             showingAlert = true
             return
@@ -95,7 +95,7 @@ struct RegisterView: View {
             return
         }
         
-        isLoading = true // Inicia o carregamento
+        isLoading = true 
         
         guard let baseURL = Bundle.main.object(forInfoDictionaryKey: "API_URL") as? String else {
             alertMessage = "API URL não configurada corretamente."
@@ -112,8 +112,8 @@ struct RegisterView: View {
             "email": email,
             "password": password,
             "role": role,
-            "username": username,
-            "tel": tel,
+            "name": name,
+            "telefone": telefone,
             "city": city,
             "endereco": endereco
         ]
@@ -134,11 +134,11 @@ struct RegisterView: View {
                 }
 
                 if let httpResponse = response as? HTTPURLResponse {
-                    self.alertMessage = "" // Limpa a mensagem anterior
+                    self.alertMessage = ""
                     switch httpResponse.statusCode {
-                    case 201:
+                    case 201, 200:
                         self.alertMessage = "Registration successful!"
-                        clearFields() // Limpa os campos após o registro bem-sucedido
+                        clearFields()
                     case 400:
                         self.alertMessage = "Bad Request. Please check your input."
                     case 409:
@@ -160,8 +160,8 @@ struct RegisterView: View {
         confirmEmail = ""
         password = ""
         confirmPassword = ""
-        username = ""
-        tel = ""
+        name = ""
+        telefone = ""
         city = ""
         endereco = ""
     }
